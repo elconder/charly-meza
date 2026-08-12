@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engancha. Escala. Personaliza. — Charly Meza</title>
+    <meta name="description" content="Un enfoque integrado: Hooked + Atomic Design + IA por Charly Meza Muñoz">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-flag">🇬🇧</span>
+        <span class="lang-text">EN</span>
+    </button>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span class="material-icons">menu</span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <span class="logo-icon">📖</span>
+                <span class="logo-text">E.E.P.</span>
+            </div>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <ul class="nav-list">
+            <li><a href="#hero" class="nav-link active" data-es="Portada" data-en="Cover">Portada</a></li>
+            <li><a href="#author" class="nav-link" data-es="Sobre el Autor" data-en="About the Author">Sobre el Autor</a></li>
+            <li><a href="#presentation" class="nav-link" data-es="Presentación" data-en="Presentation">Presentación</a></li>
+            <li><a href="#prologue" class="nav-link" data-es="Prólogo" data-en="Prologue">Prólogo</a></li>
+            <li class="nav-section">
+                <button class="nav-section-toggle" aria-expanded="false">
+                    <span data-es="Parte 1: Engancha" data-en="Part 1: Hook">Parte 1: Engancha</span>
+                    <span class="material-icons toggle-icon">expand_more</span>
+                </button>
+                <ul class="nav-subsection">
+                    <li><a href="#p1-intro" class="nav-link" data-es="El Modelo Hooked" data-en="The Hooked Model">El Modelo Hooked</a></li>
+                    <li><a href="#p1-habits" class="nav-link" data-es="¿Por qué diseñar hábitos?" data-en="Why design habits?">¿Por qué diseñar hábitos?</a></li>
+                    <li><a href="#p1-psychology" class="nav-link" data-es="Psicología del Engagement" data-en="Engagement Psychology">Psicología del Engagement</a></li>
+                    <li><a href="#p1-attention" class="nav-link" data-es="Captar la atención" data-en="Capturing attention">Captar la atención</a></li>
+                    <li><a href="#p1-rewards" class="nav-link" data-es="Recompensas Variables" data-en="Variable Rewards">Recompensas Variables</a></li>
+                    <li><a href="#p1-feedback" class="nav-link" data-es="Ciclos de retroalimentación" data-en="Feedback Loops">Ciclos de retroalimentación</a></li>
+                    <li><a href="#p1-strategies" class="nav-link" data-es="Estrategias de engagement" data-en="Engagement Strategies">Estrategias de engagement</a></li>
+                </ul>
+            </li>
+            <li class="nav-section">
+                <button class="nav-section-toggle" aria-expanded="false">
+                    <span data-es="Parte 2: Escala" data-en="Part 2: Scale">Parte 2: Escala</span>
+                    <span class="material-icons toggle-icon">expand_more</span>
+                </button>
+                <ul class="nav-subsection">
+                    <li><a href="#p2-what" class="nav-link" data-es="¿Qué es Atomic Design?" data-en="What is Atomic Design?">¿Qué es Atomic Design?</a></li>
+                    <li><a href="#p2-atoms" class="nav-link" data-es="De átomos a organismos" data-en="From atoms to organisms">De átomos a organismos</a></li>
+                    <li><a href="#p2-components" class="nav-link" data-es="Componentes reutilizables" data-en="Reusable Components">Componentes reutilizables</a></li>
+                    <li><a href="#p2-modular" class="nav-link" data-es="Sistemas modulares" data-en="Modular Systems">Sistemas modulares</a></li>
+                    <li><a href="#p2-ux" class="nav-link" data-es="Atomic Design + UX" data-en="Atomic Design + UX">Atomic Design + UX</a></li>
+                    <li><a href="#p2-innovation" class="nav-link" data-es="Innovación continua" data-en="Continuous Innovation">Innovación continua</a></li>
+                </ul>
+            </li>
+            <li class="nav-section">
+                <button class="nav-section-toggle" aria-expanded="false">
+                    <span data-es="Parte 3: Personaliza" data-en="Part 3: Personalize">Parte 3: Personaliza</span>
+                    <span class="material-icons toggle-icon">expand_more</span>
+                </button>
+                <ul class="nav-subsection">
+                    <li><a href="#p3-hooked" class="nav-link" data-es="IA + Hooked" data-en="AI + Hooked">IA + Hooked</a></li>
+                    <li><a href="#p3-atomic" class="nav-link" data-es="IA + Atomic Design" data-en="AI + Atomic Design">IA + Atomic Design</a></li>
+                    <li><a href="#p3-automation" class="nav-link" data-es="Automatización" data-en="Automation">Automatización</a></li>
+                    <li><a href="#p3-predictive" class="nav-link" data-es="Personalización predictiva" data-en="Predictive Personalization">Personalización predictiva</a></li>
+                    <li><a href="#p3-evolution" class="nav-link" data-es="IA, hábitos y evolución" data-en="AI, habits & evolution">IA, hábitos y evolución</a></li>
+                </ul>
+            </li>
+            <li class="nav-section">
+                <button class="nav-section-toggle" aria-expanded="false">
+                    <span data-es="Parte 4: De la teoría a la acción" data-en="Part 4: Theory to Action">Parte 4: De la teoría a la acción</span>
+                    <span class="material-icons toggle-icon">expand_more</span>
+                </button>
+                <ul class="nav-subsection">
+                    <li><a href="#p4-cases" class="nav-link" data-es="Casos reales" data-en="Real Cases">Casos reales</a></li>
+                    <li><a href="#p4-systems" class="nav-link" data-es="Sistemas modulares en empresas" data-en="Modular Systems in Companies">Sistemas modulares en empresas</a></li>
+                    <li><a href="#p4-dynamic" class="nav-link" data-es="Interfaces dinámicas" data-en="Dynamic Interfaces">Interfaces dinámicas</a></li>
+                    <li><a href="#p4-tools" class="nav-link" data-es="Herramientas y frameworks" data-en="Tools & Frameworks">Herramientas y frameworks</a></li>
+                    <li><a href="#p4-start" class="nav-link" data-es="Cómo empezar" data-en="How to Start">Cómo empezar</a></li>
+                    <li><a href="#p4-architecture" class="nav-link" data-es="Arquitectura de equipos" data-en="Team Architecture">Arquitectura de equipos</a></li>
+                    <li><a href="#p4-data" class="nav-link" data-es="Modelos de datos" data-en="Data Models">Modelos de datos</a></li>
+                    <li><a href="#p4-campaign" class="nav-link" data-es="Caso práctico: Campaña" data-en="Case Study: Campaign">Caso práctico: Campaña</a></li>
+                </ul>
+            </li>
+            <li><a href="#conclusion" class="nav-link" data-es="Conclusión" data-en="Conclusion">Conclusión</a></li>
+            <li><a href="#credits" class="nav-link" data-es="Créditos" data-en="Credits">Créditos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="content" id="mainContent">
+        
+        <!-- HERO / COVER -->
+        <section id="hero" class="section hero-section">
+            <div class="hero-content">
+                <p class="hero-author">Charly Meza Muñoz</p>
+                <h1 class="hero-title">
+                    <span class="title-line" data-es="Engancha." data-en="Hook.">Engancha.</span>
+                    <span class="title-line" data-es="Escala." data-en="Scale.">Escala.</span>
+                    <span class="title-line" data-es="Personaliza." data-en="Personalize.">Personaliza.</span>
+                </h1>
+                <p class="hero-subtitle" data-es="Un enfoque integrado:" data-en="An integrated approach:">Un enfoque integrado:</p>
+                <p class="hero-frameworks">Hooked + Atomic Design + IA</p>
+                <div class="hero-scroll-indicator">
+                    <span class="material-icons">keyboard_arrow_down</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT THE AUTHOR -->
+        <section id="author" class="section">
+            <div class="section-container">
+                <div class="author-layout">
+                    <div class="author-photo">
+                        <img src="images/page2_img1.jpeg" alt="Charly Meza Muñoz" loading="lazy">
+                    </div>
+                    <div class="author-info">
+                        <h2 class="section-title" data-es="Sobre el Autor" data-en="About the Author">Sobre el Autor</h2>
+                        <p class="author-name">Charly Meza Muñoz</p>
+                        <p class="author-role">UX Strategy & AI Design Systems</p>
+                        <div class="author-text" data-es="Estratega de producto digital y emprendedor con experiencia en telecomunicaciones, plataformas digitales y diseño de experiencias centradas en el usuario.<br><br>Durante más de una década ha trabajado en la creación de productos y ecosistemas digitales enfocados en engagement, retención y escalabilidad, participando en proyectos para empresas y startups en Latinoamérica.<br><br>A lo largo de su trayectoria ha combinado metodologías como Hooked, Atomic Design y el uso de inteligencia artificial para construir sistemas de diseño más flexibles, automatizados y orientados a resultados.<br><br>Ha liderado iniciativas de UX/UI en la industria telcos y participado en el desarrollo de productos digitales, plataformas de servicios y modelos de suscripción enfocados en crecimiento y experiencia de usuario.<br><br>Con este libro busca compartir una visión práctica sobre cómo diseñar productos memorables que enganchen usuarios, escalen de manera consistente y aprovechen el potencial de la IA para personalizar experiencias." data-en="Digital product strategist and entrepreneur with experience in telecommunications, digital platforms, and user-centered experience design.<br><br>For over a decade, he has worked on creating digital products and ecosystems focused on engagement, retention, and scalability, participating in projects for companies and startups across Latin America.<br><br>Throughout his career, he has combined methodologies such as Hooked, Atomic Design, and the use of artificial intelligence to build more flexible, automated, and results-oriented design systems.<br><br>He has led UX/UI initiatives in the telecom industry and participated in the development of digital products, service platforms, and subscription models focused on growth and user experience.<br><br>With this book, he seeks to share a practical vision on how to design memorable products that hook users, scale consistently, and leverage AI's potential to personalize experiences.">
+                            <p>Estratega de producto digital y emprendedor con experiencia en telecomunicaciones, plataformas digitales y diseño de experiencias centradas en el usuario.</p>
+                            <p>Durante más de una década ha trabajado en la creación de productos y ecosistemas digitales enfocados en engagement, retención y escalabilidad, participando en proyectos para empresas y startups en Latinoamérica.</p>
+                            <p>A lo largo de su trayectoria ha combinado metodologías como <strong>Hooked</strong>, <strong>Atomic Design</strong> y el uso de <strong>inteligencia artificial</strong> para construir sistemas de diseño más flexibles, automatizados y orientados a resultados.</p>
+                            <p>Ha liderado iniciativas de UX/UI en la industria telcos y participado en el desarrollo de productos digitales, plataformas de servicios y modelos de suscripción enfocados en crecimiento y experiencia de usuario.</p>
+                            <p>Con este libro busca compartir una visión práctica sobre cómo diseñar productos memorables que enganchen usuarios, escalen de manera consistente y aprovechen el potencial de la IA para personalizar experiencias.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRESENTATION -->
+        <section id="presentation" class="section section-light">
+            <div class="section-container">
+                <span class="section-number">01</span>
+                <h2 class="section-title" data-es="Presentación" data-en="Presentation">Presentación</h2>
+                <div class="content-block">
+                    <p data-es="Este libro toma como referencia frameworks reconocidos de UX, behavioral design y design systems, reinterpretándolos desde una visión práctica apoyada por inteligencia artificial." data-en="This book takes as reference recognized frameworks of UX, behavioral design and design systems, reinterpreting them from a practical vision supported by artificial intelligence.">Este libro toma como referencia frameworks reconocidos de UX, behavioral design y design systems, reinterpretándolos desde una visión práctica apoyada por inteligencia artificial.</p>
+                    <p data-es="A lo largo de estas páginas exploraremos cómo integrar diseño modular, hábitos digitales y tecnologías inteligentes para crear productos que no solo sean útiles y fáciles de usar, sino que logren convertirse en parte de la vida cotidiana de las personas." data-en="Throughout these pages we will explore how to integrate modular design, digital habits and intelligent technologies to create products that are not only useful and easy to use, but that become part of people's daily lives.">A lo largo de estas páginas exploraremos cómo integrar diseño modular, hábitos digitales y tecnologías inteligentes para crear productos que no solo sean útiles y fáciles de usar, sino que logren convertirse en parte de la vida cotidiana de las personas.</p>
+                </div>
+                <div class="synergy-block">
+                    <h3 data-es="La Sinergia Perfecta" data-en="The Perfect Synergy">La Sinergia Perfecta</h3>
+                    <div class="synergy-cards">
+                        <div class="synergy-card">
+                            <div class="synergy-icon">🎯</div>
+                            <h4>Hooked</h4>
+                            <p data-es="Nos da el mapa para entender el comportamiento humano. Cómo captar la atención, construir hábitos y generar una conexión emocional con el usuario." data-en="Gives us the map to understand human behavior. How to capture attention, build habits and generate an emotional connection with the user.">Nos da el mapa para entender el comportamiento humano. Cómo captar la atención, construir hábitos y generar una conexión emocional con el usuario.</p>
+                        </div>
+                        <div class="synergy-card">
+                            <div class="synergy-icon">🧩</div>
+                            <h4>Atomic Design</h4>
+                            <p data-es="Aporta la estructura. Nos permite crear interfaces modulares, escalables y coherentes, donde cada componente puede adaptarse y evolucionar sin romper el sistema." data-en="Provides the structure. Allows us to create modular, scalable and coherent interfaces, where each component can adapt and evolve without breaking the system.">Aporta la estructura. Nos permite crear interfaces modulares, escalables y coherentes, donde cada componente puede adaptarse y evolucionar sin romper el sistema.</p>
+                        </div>
+                        <div class="synergy-card">
+                            <div class="synergy-icon">🤖</div>
+                            <h4 data-es="Inteligencia Artificial" data-en="Artificial Intelligence">Inteligencia Artificial</h4>
+                            <p data-es="Es el motor que impulsa todo hacia adelante. Personaliza la experiencia, aprende del usuario, anticipa necesidades y automatiza lo repetitivo." data-en="Is the engine that drives everything forward. Personalizes the experience, learns from the user, anticipates needs and automates the repetitive.">Es el motor que impulsa todo hacia adelante. Personaliza la experiencia, aprende del usuario, anticipa necesidades y automatiza lo repetitivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROLOGUE -->
+        <section id="prologue" class="section">
+            <div class="section-container">
+                <span class="section-number">02</span>
+                <h2 class="section-title" data-es="Prólogo" data-en="Prologue">Prólogo</h2>
+                <div class="content-block prose">
+                    <p data-es="En 2016, trabajaba como diseñador UX en una empresa de telecomunicaciones que atravesaba un momento crucial de fusión y transformación." data-en="In 2016, I was working as a UX designer at a telecommunications company going through a crucial moment of merger and transformation.">En 2016, trabajaba como diseñador UX en una empresa de telecomunicaciones que atravesaba un momento crucial de fusión y transformación.</p>
+                    <p data-es="El desafío principal era unificar el portafolio de productos y servicios, que incluía tanto dispositivos móviles como servicios de internet para el hogar. Lo que inicialmente parecía una tarea sencilla pronto reveló su complejidad." data-en="The main challenge was to unify the portfolio of products and services, which included both mobile devices and home internet services. What initially seemed like a simple task soon revealed its complexity.">El desafío principal era unificar el portafolio de productos y servicios, que incluía tanto dispositivos móviles como servicios de internet para el hogar. Lo que inicialmente parecía una tarea sencilla pronto reveló su complejidad.</p>
+                    <p data-es="Se decidió formar una célula de trabajo para crear la interfaz del catálogo unificado, pero las directrices eran imprecisas. La presión por soluciones rápidas desde la vicepresidencia digital era evidente." data-en="It was decided to form a work cell to create the unified catalog interface, but the guidelines were imprecise. The pressure for quick solutions from the digital vice-presidency was evident.">Se decidió formar una célula de trabajo para crear la interfaz del catálogo unificado, pero las directrices eran imprecisas. La presión por soluciones rápidas desde la vicepresidencia digital era evidente.</p>
+                    <blockquote data-es="«Lo único que es editable desde cero son los artefactos, es un módulo que está disponible en esta versión de Drupal.»" data-en="&laquo;The only thing that is editable from scratch are the artifacts, it is a module available in this version of Drupal.&raquo;">«Lo único que es editable desde cero son los artefactos, es un módulo que está disponible en esta versión de Drupal.»</blockquote>
+                    <p data-es="La palabra 'artefacto' fue la clave. Lo que inicialmente parecía una restricción técnica comenzó a verse como una oportunidad. Empezamos a crear artefactos combinables, y con el tiempo llegamos al libro de Atomic Design de Brad Frost, el cual nos proporcionó el marco teórico que necesitábamos." data-en="The word 'artifact' was the key. What initially seemed like a technical restriction began to look like an opportunity. We started creating combinable artifacts, and over time we reached Brad Frost's Atomic Design book, which provided us with the theoretical framework we needed.">La palabra "artefacto" fue la clave. Lo que inicialmente parecía una restricción técnica comenzó a verse como una oportunidad. Empezamos a crear artefactos combinables, y con el tiempo llegamos al libro de Atomic Design de Brad Frost, el cual nos proporcionó el marco teórico que necesitábamos.</p>
+                    <p data-es="Con el tiempo, llegó el libro del modelo Hooked. Todo cambió con la llegada de la inteligencia artificial, que permitió armonizar y darle coherencia al modelo. Así nació el sistema que comparto en este libro: una combinación de diseño modular, hábitos digitales e IA para crear productos que no solo funcionan, sino que se sienten naturales." data-en="Over time, the Hooked model book arrived. Everything changed with the arrival of artificial intelligence, which allowed harmonizing and giving coherence to the model. Thus was born the system I share in this book: a combination of modular design, digital habits and AI to create products that not only work, but feel natural.">Con el tiempo, llegó el libro del modelo Hooked. Todo cambió con la llegada de la inteligencia artificial, que permitió armonizar y darle coherencia al modelo. Así nació el sistema que comparto en este libro: una combinación de diseño modular, hábitos digitales e IA para crear productos que no solo funcionan, sino que se sienten naturales.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PART 1: HOOKED -->
+        <section id="p1-intro" class="section section-part">
+            <div class="section-container">
+                <div class="part-header">
+                    <span class="part-label" data-es="Parte 1" data-en="Part 1">Parte 1</span>
+                    <h2 class="part-title" data-es="Engancha: Diseñar para formar hábitos" data-en="Hook: Design to form habits">Engancha: Diseñar para formar hábitos</h2>
+                </div>
+                <div class="content-block">
+                    <div class="hooked-cycle">
+                        <div class="cycle-item">
+                            <div class="cycle-icon">⚡</div>
+                            <h4 data-es="Disparador" data-en="Trigger">Disparador</h4>
+                            <p data-es="Algo que inicia la acción (una notificación, una emoción)." data-en="Something that initiates the action (a notification, an emotion).">Algo que inicia la acción (una notificación, una emoción).</p>
+                        </div>
+                        <div class="cycle-arrow">→</div>
+                        <div class="cycle-item">
+                            <div class="cycle-icon">👆</div>
+                            <h4 data-es="Acción" data-en="Action">Acción</h4>
+                            <p data-es="El comportamiento que el usuario realiza con la expectativa de recompensa." data-en="The behavior the user performs with the expectation of reward.">El comportamiento que el usuario realiza con la expectativa de recompensa.</p>
+                        </div>
+                        <div class="cycle-arrow">→</div>
+                        <div class="cycle-item">
+                            <div class="cycle-icon">🎁</div>
+                            <h4 data-es="Recompensa Variable" data-en="Variable Reward">Recompensa Variable</h4>
+                            <p data-es="Un resultado inesperado que refuerza el hábito." data-en="An unexpected result that reinforces the habit.">Un resultado inesperado que refuerza el hábito.</p>
+                        </div>
+                        <div class="cycle-arrow">→</div>
+                        <div class="cycle-item">
+                            <div class="cycle-icon">💎</div>
+                            <h4 data-es="Inversión" data-en="Investment">Inversión</h4>
+                            <p data-es="Algo que el usuario aporta que aumenta su compromiso." data-en="Something the user contributes that increases their commitment.">Algo que el usuario aporta que aumenta su compromiso.</p>
+                        </div>
+                    </div>
+                    <p class="highlight-text" data-es="Diseñar con Hooked no es manipular, es comprender. Es alinear el diseño con las motivaciones humanas para crear interacciones que se sienten intuitivas y gratificantes." data-en="Designing with Hooked is not manipulating, it's understanding. It's aligning design with human motivations to create interactions that feel intuitive and gratifying.">Diseñar con Hooked no es manipular, es comprender. Es alinear el diseño con las motivaciones humanas para crear interacciones que se sienten intuitivas y gratificantes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="p1-habits" class="section section-light">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="¿Por qué diseñar hábitos?" data-en="Why design habits?">¿Por qué diseñar hábitos?</h3>
+                <div class="content-block prose">
+                    <p data-es="Diseñar productos digitales ya no se trata solo de resolver problemas. Se trata de formar parte de la vida de las personas. Y eso se logra creando hábitos." data-en="Designing digital products is no longer just about solving problems. It's about becoming part of people's lives. And that is achieved by creating habits.">Diseñar productos digitales ya no se trata solo de resolver problemas. Se trata de formar parte de la vida de las personas. Y eso se logra creando hábitos.</p>
+                    <p data-es="Un producto que logra enganchar no necesita recordatorios constantes ni campañas de retención agresivas. Los usuarios vuelven por cuenta propia, porque el producto les aporta valor repetido." data-en="A product that hooks doesn't need constant reminders or aggressive retention campaigns. Users return on their own because the product delivers repeated value.">Un producto que logra enganchar no necesita recordatorios constantes ni campañas de retención agresivas. Los usuarios vuelven por cuenta propia, porque el producto les aporta valor repetido.</p>
+                    <div class="info-card">
+                        <p data-es="Diseñar hábitos no es manipular. Es entender profundamente lo que motiva a las personas y alinear esa motivación con la propuesta de valor del producto." data-en="Designing habits is not manipulating. It's deeply understanding what motivates people and aligning that motivation with the product's value proposition.">Diseñar hábitos no es manipular. Es entender profundamente lo que motiva a las personas y alinear esa motivación con la propuesta de valor del producto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p1-psychology" class="section">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Psicología del Engagement: Guía, no manipulación" data-en="Engagement Psychology: Guide, don't manipulate">Psicología del Engagement: Guía, no manipulación</h3>
+                <div class="content-block prose">
+                    <p data-es="Enganchar no es lo mismo que atrapar. Como diseñadores, nuestro rol no es manipular, sino guiar. El engagement auténtico se basa en la comprensión del comportamiento humano, no en explotar sus debilidades." data-en="Hooking is not the same as trapping. As designers, our role is not to manipulate, but to guide. Authentic engagement is based on understanding human behavior, not exploiting its weaknesses.">Enganchar no es lo mismo que atrapar. Como diseñadores, nuestro rol no es manipular, sino guiar. El engagement auténtico se basa en la comprensión del comportamiento humano, no en explotar sus debilidades.</p>
+                    <p data-es="La clave está en crear experiencias que se sientan naturales, útiles y emocionalmente gratificantes. Que inviten, no que fuercen." data-en="The key is to create experiences that feel natural, useful and emotionally gratifying. That invite, not force.">La clave está en crear experiencias que se sientan naturales, útiles y emocionalmente gratificantes. Que inviten, no que fuercen.</p>
+                    <div class="principle-card">
+                        <h4 data-es="Una regla práctica:" data-en="A practical rule:">Una regla práctica:</h4>
+                        <p class="principle-text" data-es="¿Esto aporta valor o solo busca retención?" data-en="Does this add value or just seek retention?">¿Esto aporta valor o solo busca retención?</p>
+                        <p data-es="Cada componente, notificación o interacción debería pasar esta prueba." data-en="Every component, notification or interaction should pass this test.">Cada componente, notificación o interacción debería pasar esta prueba.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p1-attention" class="section section-light">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Captar la atención en un mundo saturado" data-en="Capturing attention in a saturated world">Captar la atención en un mundo saturado</h3>
+                <div class="content-block prose">
+                    <p data-es="Vivimos en la economía de la atención. Cada día, los usuarios reciben cientos de estímulos. Todo compite por un recurso limitado: su atención." data-en="We live in the attention economy. Every day, users receive hundreds of stimuli. Everything competes for a limited resource: their attention.">Vivimos en la economía de la atención. Cada día, los usuarios reciben cientos de estímulos. Todo compite por un recurso limitado: su atención.</p>
+                    <blockquote data-es="Un buen trigger no solo llama la atención. Llega en el momento correcto, con el tono correcto, y con una promesa clara de valor." data-en="A good trigger doesn't just grab attention. It arrives at the right time, with the right tone, and with a clear promise of value.">Un buen trigger no solo llama la atención. Llega en el momento correcto, con el tono correcto, y con una promesa clara de valor.</blockquote>
+                    <h4 data-es="Principios clave:" data-en="Key principles:">Principios clave:</h4>
+                    <ul>
+                        <li data-es="Precisión, no volumen — ser relevantes en lugar de omnipresentes" data-en="Precision, not volume — be relevant instead of omnipresent">Precisión, no volumen — ser relevantes en lugar de omnipresentes</li>
+                        <li data-es="Menos es más — claridad antes que impacto" data-en="Less is more — clarity before impact">Menos es más — claridad antes que impacto</li>
+                        <li data-es="Atención → Retención — captar es solo el primer paso" data-en="Attention → Retention — capturing is only the first step">Atención → Retención — captar es solo el primer paso</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="p1-rewards" class="section">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Diseñar Recompensas Variables" data-en="Designing Variable Rewards">Diseñar Recompensas Variables</h3>
+                <div class="content-block prose">
+                    <p data-es="Las recompensas son el combustible del hábito. Pero para que realmente funcionen, no pueden ser siempre iguales. La clave está en la variabilidad." data-en="Rewards are the fuel of habit. But for them to really work, they can't always be the same. The key is variability.">Las recompensas son el combustible del hábito. Pero para que realmente funcionen, no pueden ser siempre iguales. La clave está en la variabilidad.</p>
+                    <div class="reward-types">
+                        <div class="reward-card">
+                            <span class="reward-emoji">👥</span>
+                            <h4 data-es="Sociales" data-en="Social">Sociales</h4>
+                            <p data-es="Likes, comentarios, seguidores, reconocimiento." data-en="Likes, comments, followers, recognition.">Likes, comentarios, seguidores, reconocimiento.</p>
+                        </div>
+                        <div class="reward-card">
+                            <span class="reward-emoji">📈</span>
+                            <h4 data-es="Progreso" data-en="Progress">Progreso</h4>
+                            <p data-es="Avances en una meta, niveles, puntos." data-en="Progress towards a goal, levels, points.">Avances en una meta, niveles, puntos.</p>
+                        </div>
+                        <div class="reward-card">
+                            <span class="reward-emoji">💡</span>
+                            <h4 data-es="Contenido" data-en="Content">Contenido</h4>
+                            <p data-es="Información nueva, entretenimiento, descubrimientos." data-en="New information, entertainment, discoveries.">Información nueva, entretenimiento, descubrimientos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p1-feedback" class="section section-light">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Crear ciclos de retroalimentación efectivos" data-en="Creating effective feedback loops">Crear ciclos de retroalimentación efectivos</h3>
+                <div class="content-block prose">
+                    <p data-es="Un buen diseño no solo invita a la acción, también responde. Esa respuesta es lo que cierra el ciclo de interacción y mantiene al usuario comprometido." data-en="Good design doesn't just invite action, it also responds. That response is what closes the interaction loop and keeps the user engaged.">Un buen diseño no solo invita a la acción, también responde. Esa respuesta es lo que cierra el ciclo de interacción y mantiene al usuario comprometido.</p>
+                    <div class="principles-grid">
+                        <div class="principle-item">
+                            <span class="principle-number">1</span>
+                            <h4 data-es="Inmediatez" data-en="Immediacy">Inmediatez</h4>
+                            <p data-es="El usuario debe recibir una respuesta al instante." data-en="The user should receive a response instantly.">El usuario debe recibir una respuesta al instante.</p>
+                        </div>
+                        <div class="principle-item">
+                            <span class="principle-number">2</span>
+                            <h4 data-es="Claridad" data-en="Clarity">Claridad</h4>
+                            <p data-es="La retroalimentación debe ser entendible sin esfuerzo." data-en="Feedback should be understandable without effort.">La retroalimentación debe ser entendible sin esfuerzo.</p>
+                        </div>
+                        <div class="principle-item">
+                            <span class="principle-number">3</span>
+                            <h4 data-es="Relevancia" data-en="Relevance">Relevancia</h4>
+                            <p data-es="Dosificar la retroalimentación según la importancia del evento." data-en="Dose feedback according to the importance of the event.">Dosificar la retroalimentación según la importancia del evento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p1-strategies" class="section">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Estrategias para mantener el engagement" data-en="Strategies to maintain engagement">Estrategias para mantener el engagement</h3>
+                <div class="content-block">
+                    <div class="strategies-list">
+                        <div class="strategy-item">
+                            <span class="strategy-number">01</span>
+                            <h4 data-es="Profundidad progresiva" data-en="Progressive Depth">Profundidad progresiva</h4>
+                            <p data-es="Ofrece valor desde el inicio, pero guarda capas adicionales para descubrir con el uso." data-en="Offer value from the start, but save additional layers to discover with use.">Ofrece valor desde el inicio, pero guarda capas adicionales para descubrir con el uso.</p>
+                        </div>
+                        <div class="strategy-item">
+                            <span class="strategy-number">02</span>
+                            <h4 data-es="Recompensas que evolucionan" data-en="Evolving Rewards">Recompensas que evolucionan</h4>
+                            <p data-es="Ajusta las recompensas según el comportamiento, progreso o nivel de compromiso." data-en="Adjust rewards based on behavior, progress, or commitment level.">Ajusta las recompensas según el comportamiento, progreso o nivel de compromiso.</p>
+                        </div>
+                        <div class="strategy-item">
+                            <span class="strategy-number">03</span>
+                            <h4 data-es="Personalización real" data-en="Real Personalization">Personalización real</h4>
+                            <p data-es="Que el usuario sienta que el producto se adapta a él." data-en="Let the user feel that the product adapts to them.">Que el usuario sienta que el producto se adapta a él.</p>
+                        </div>
+                        <div class="strategy-item">
+                            <span class="strategy-number">04</span>
+                            <h4 data-es="Ritmo y consistencia" data-en="Rhythm & Consistency">Ritmo y consistencia</h4>
+                            <p data-es="Balance entre elementos familiares y nuevas dinámicas." data-en="Balance between familiar elements and new dynamics.">Balance entre elementos familiares y nuevas dinámicas.</p>
+                        </div>
+                        <div class="strategy-item">
+                            <span class="strategy-number">05</span>
+                            <h4 data-es="Espacios para la inversión" data-en="Spaces for Investment">Espacios para la inversión</h4>
+                            <p data-es="Diseña momentos donde el usuario sienta que está construyendo algo personal." data-en="Design moments where the user feels they are building something personal.">Diseña momentos donde el usuario sienta que está construyendo algo personal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PART 2: ATOMIC DESIGN -->
+        <section id="p2-what" class="section section-part">
+            <div class="section-container">
+                <div class="part-header">
+                    <span class="part-label" data-es="Parte 2" data-en="Part 2">Parte 2</span>
+                    <h2 class="part-title" data-es="Escala: Atomic Design como Sistema" data-en="Scale: Atomic Design as System">Escala: Atomic Design como Sistema</h2>
+                </div>
+                <div class="content-block prose">
+                    <p data-es="Atomic Design no es solo una metodología, es una mentalidad: construir interfaces como sistemas vivos, compuestos por piezas pequeñas, reutilizables y perfectamente conectadas entre sí." data-en="Atomic Design is not just a methodology, it's a mindset: building interfaces as living systems, composed of small, reusable pieces perfectly connected to each other.">Atomic Design no es solo una metodología, es una mentalidad: construir interfaces como sistemas vivos, compuestos por piezas pequeñas, reutilizables y perfectamente conectadas entre sí.</p>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <span class="material-icons">speed</span>
+                            <p data-es="Diseñar más rápido: reutilizas componentes" data-en="Design faster: reuse components">Diseñar más rápido: reutilizas componentes</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="material-icons">bug_report</span>
+                            <p data-es="Reducir errores: funciona en todos los contextos" data-en="Reduce errors: works in all contexts">Reducir errores: funciona en todos los contextos</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="material-icons">trending_up</span>
+                            <p data-es="Escalar sin caos: agregar sin perder consistencia" data-en="Scale without chaos: add without losing consistency">Escalar sin caos: agregar sin perder consistencia</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="material-icons">group</span>
+                            <p data-es="Colaborar mejor: mismas piezas para todos" data-en="Better collaboration: same pieces for everyone">Colaborar mejor: mismas piezas para todos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p2-atoms" class="section section-light">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="De átomos a organismos: construyendo con lógica" data-en="From atoms to organisms: building with logic">De átomos a organismos: construyendo con lógica</h3>
+                <div class="atomic-hierarchy">
+                    <div class="atomic-level">
+                        <div class="atomic-badge">0</div>
+                        <h4>Tokens</h4>
+                        <p data-es="Variables que definen decisiones visuales: colores, tamaños, fuentes, espacios." data-en="Variables that define visual decisions: colors, sizes, fonts, spaces.">Variables que definen decisiones visuales: colores, tamaños, fuentes, espacios.</p>
+                    </div>
+                    <div class="atomic-level">
+                        <div class="atomic-badge">1</div>
+                        <h4 data-es="Átomos" data-en="Atoms">Átomos</h4>
+                        <p data-es="Bloques fundamentales: botones, íconos, campos de texto, tipografías." data-en="Fundamental blocks: buttons, icons, text fields, typography.">Bloques fundamentales: botones, íconos, campos de texto, tipografías.</p>
+                    </div>
+                    <div class="atomic-level">
+                        <div class="atomic-badge">2</div>
+                        <h4 data-es="Moléculas" data-en="Molecules">Moléculas</h4>
+                        <p data-es="Grupos de átomos con función específica: campo de búsqueda con botón de envío." data-en="Groups of atoms with specific function: search field with submit button.">Grupos de átomos con función específica: campo de búsqueda con botón de envío.</p>
+                    </div>
+                    <div class="atomic-level">
+                        <div class="atomic-badge">3</div>
+                        <h4 data-es="Organismos" data-en="Organisms">Organismos</h4>
+                        <p data-es="Secciones completas: header, tarjeta de producto, formulario." data-en="Complete sections: header, product card, form.">Secciones completas: header, tarjeta de producto, formulario.</p>
+                    </div>
+                    <div class="atomic-level">
+                        <div class="atomic-badge">4</div>
+                        <h4>Templates</h4>
+                        <p data-es="Estructura general de la interfaz, el esqueleto de las vistas." data-en="General interface structure, the skeleton of the views.">Estructura general de la interfaz, el esqueleto de las vistas.</p>
+                    </div>
+                    <div class="atomic-level">
+                        <div class="atomic-badge">5</div>
+                        <h4 data-es="Páginas" data-en="Pages">Páginas</h4>
+                        <p data-es="Instancias reales con contenido real, validando el sistema." data-en="Real instances with real content, validating the system.">Instancias reales con contenido real, validando el sistema.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p2-components" class="section">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Crear componentes reutilizables y consistentes" data-en="Creating reusable and consistent components">Crear componentes reutilizables y consistentes</h3>
+                <div class="content-block prose">
+                    <p data-es="Uno de los mayores errores al escalar productos digitales es diseñar desde cero cada vez. La solución: componentes reutilizables. Bien diseñados, son bloques de construcción que mantienen la coherencia." data-en="One of the biggest mistakes when scaling digital products is designing from scratch every time. The solution: reusable components. Well designed, they are building blocks that maintain coherence.">Uno de los mayores errores al escalar productos digitales es diseñar desde cero cada vez. La solución: componentes reutilizables. Bien diseñados, son bloques de construcción que mantienen la coherencia.</p>
+                    <h4 data-es="Cómo construir buenos componentes:" data-en="How to build good components:">Cómo construir buenos componentes:</h4>
+                    <ol>
+                        <li data-es="Empieza por lo simple: Define el átomo base" data-en="Start simple: Define the base atom">Empieza por lo simple: Define el átomo base</li>
+                        <li data-es="Establece sus variantes: Estados, tamaños, colores" data-en="Establish its variants: States, sizes, colors">Establece sus variantes: Estados, tamaños, colores</li>
+                        <li data-es="Define límites y reglas: ¿En qué contextos puede usarse?" data-en="Define limits and rules: In what contexts can it be used?">Define límites y reglas: ¿En qué contextos puede usarse?</li>
+                        <li data-es="Documenta bien: Que cualquiera entienda cómo usarlo" data-en="Document well: So anyone understands how to use it">Documenta bien: Que cualquiera entienda cómo usarlo</li>
+                        <li data-es="Conéctalo al sistema: Que herede estilos globales" data-en="Connect it to the system: It should inherit global styles">Conéctalo al sistema: Que herede estilos globales</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="p2-modular" class="section section-light">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Sistemas modulares que evolucionan" data-en="Modular systems that evolve">Sistemas modulares que evolucionan</h3>
+                <div class="content-block prose">
+                    <p data-es="Cuando la estructura es sólida desde lo más pequeño, todo escala con menos fricción. Los sistemas modulares permiten crecer de manera organizada." data-en="When the structure is solid from the smallest level, everything scales with less friction. Modular systems allow organized growth.">Cuando la estructura es sólida desde lo más pequeño, todo escala con menos fricción. Los sistemas modulares permiten crecer de manera organizada.</p>
+                    <div class="info-card" data-es="La repetición no es un defecto; es una estrategia. La consistencia visual crea confianza, reduce la carga cognitiva y mejora la experiencia del usuario." data-en="Repetition is not a defect; it's a strategy. Visual consistency builds trust, reduces cognitive load, and improves user experience.">
+                        <p>La repetición no es un defecto; es una estrategia. La consistencia visual crea confianza, reduce la carga cognitiva y mejora la experiencia del usuario.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p2-ux" class="section">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Atomic Design + UX: coherencia que se siente" data-en="Atomic Design + UX: coherence you can feel">Atomic Design + UX: coherencia que se siente</h3>
+                <div class="content-block prose">
+                    <p data-es="Un buen sistema de diseño no solo organiza componentes. También sostiene experiencias. Atomic Design, bien aplicado, impacta directamente en cómo el usuario percibe, recorre y se relaciona con un producto." data-en="A good design system doesn't just organize components. It also sustains experiences. Atomic Design, well applied, directly impacts how the user perceives, navigates, and relates to a product.">Un buen sistema de diseño no solo organiza componentes. También sostiene experiencias. Atomic Design, bien aplicado, impacta directamente en cómo el usuario percibe, recorre y se relaciona con un producto.</p>
+                    <blockquote data-es="El usuario no debería tener que pensar dos veces cómo hacer algo. La consistencia le da confianza. Y la confianza genera hábito." data-en="The user shouldn't have to think twice about how to do something. Consistency gives them confidence. And confidence generates habit.">El usuario no debería tener que pensar dos veces cómo hacer algo. La consistencia le da confianza. Y la confianza genera hábito.</blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="p2-innovation" class="section section-light">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Innovación continua con Atomic Design" data-en="Continuous Innovation with Atomic Design">Innovación continua con Atomic Design</h3>
+                <div class="content-block prose">
+                    <p data-es="Innovar no significa empezar desde cero. Significa mejorar lo que ya funciona sin romper lo que ya existe. Atomic Design permite experimentar, evolucionar y escalar sin perder la coherencia." data-en="Innovating doesn't mean starting from scratch. It means improving what already works without breaking what already exists. Atomic Design allows experimenting, evolving and scaling without losing coherence.">Innovar no significa empezar desde cero. Significa mejorar lo que ya funciona sin romper lo que ya existe. Atomic Design permite experimentar, evolucionar y escalar sin perder la coherencia.</p>
+                    <ul>
+                        <li data-es="Probar nuevas ideas rápidamente" data-en="Test new ideas quickly">Probar nuevas ideas rápidamente</li>
+                        <li data-es="Iterar sobre variantes sin afectar el sistema base" data-en="Iterate on variants without affecting the base system">Iterar sobre variantes sin afectar el sistema base</li>
+                        <li data-es="Escalar funcionalidades a otras secciones sin retrabajo" data-en="Scale functionalities to other sections without rework">Escalar funcionalidades a otras secciones sin retrabajo</li>
+                    </ul>
+                    <div class="info-card">
+                        <p data-es="El buen diseño no se queda quieto. Evoluciona." data-en="Good design doesn't stay still. It evolves.">El buen diseño no se queda quieto. Evoluciona.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PART 3: AI -->
+        <section id="p3-hooked" class="section section-part">
+            <div class="section-container">
+                <div class="part-header">
+                    <span class="part-label" data-es="Parte 3" data-en="Part 3">Parte 3</span>
+                    <h2 class="part-title" data-es="Personaliza: Inteligencia Artificial aplicada al diseño" data-en="Personalize: Artificial Intelligence applied to design">Personaliza: Inteligencia Artificial aplicada al diseño</h2>
+                </div>
+                <div class="content-block prose">
+                    <p data-es="La IA no viene a reemplazar la intuición del diseñador, ni a automatizar la creatividad. Viene a potenciarla. A leer datos en tiempo real, a identificar patrones invisibles, a adaptar productos al ritmo del usuario." data-en="AI doesn't come to replace the designer's intuition, nor to automate creativity. It comes to enhance it. To read data in real time, to identify invisible patterns, to adapt products to the user's rhythm.">La IA no viene a reemplazar la intuición del diseñador, ni a automatizar la creatividad. Viene a potenciarla. A leer datos en tiempo real, a identificar patrones invisibles, a adaptar productos al ritmo del usuario.</p>
+                    <h3 data-es="IA + Hooked: engagement personalizado" data-en="AI + Hooked: personalized engagement">IA + Hooked: engagement personalizado</h3>
+                    <div class="ai-hooked-grid">
+                        <div class="ai-item">
+                            <h4 data-es="1. Disparadores inteligentes" data-en="1. Smart Triggers">1. Disparadores inteligentes</h4>
+                            <p data-es="La IA permite activar disparadores personalizados según comportamiento, contexto y estado emocional inferido." data-en="AI enables personalized triggers based on behavior, context, and inferred emotional state.">La IA permite activar disparadores personalizados según comportamiento, contexto y estado emocional inferido.</p>
+                        </div>
+                        <div class="ai-item">
+                            <h4 data-es="2. Acciones optimizadas" data-en="2. Optimized Actions">2. Acciones optimizadas</h4>
+                            <p data-es="Puede reducir fricción al predecir lo que el usuario busca y adaptar la interfaz." data-en="Can reduce friction by predicting what the user is looking for and adapting the interface.">Puede reducir fricción al predecir lo que el usuario busca y adaptar la interfaz.</p>
+                        </div>
+                        <div class="ai-item">
+                            <h4 data-es="3. Recompensas realmente variables" data-en="3. Truly Variable Rewards">3. Recompensas realmente variables</h4>
+                            <p data-es="Selecciona la recompensa más relevante según perfil e historial." data-en="Selects the most relevant reward based on profile and history.">Selecciona la recompensa más relevante según perfil e historial.</p>
+                        </div>
+                        <div class="ai-item">
+                            <h4 data-es="4. Inversión que nutre el sistema" data-en="4. Investment that feeds the system">4. Inversión que nutre el sistema</h4>
+                            <p data-es="Cada acción se convierte en datos que alimentan y mejoran el ciclo." data-en="Every action becomes data that feeds and improves the cycle.">Cada acción se convierte en datos que alimentan y mejoran el ciclo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p3-atomic" class="section section-light">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="IA + Atomic Design: interfaces que aprenden" data-en="AI + Atomic Design: interfaces that learn">IA + Atomic Design: interfaces que aprenden</h3>
+                <div class="content-block prose">
+                    <p data-es="Cuando un sistema modular se encuentra con una tecnología que aprende, el diseño deja de ser estático. Se convierte en algo vivo, adaptativo, inteligente." data-en="When a modular system meets a technology that learns, design stops being static. It becomes something living, adaptive, intelligent.">Cuando un sistema modular se encuentra con una tecnología que aprende, el diseño deja de ser estático. Se convierte en algo vivo, adaptativo, inteligente.</p>
+                    <ul>
+                        <li data-es="Si un botón no se usa, puede reubicarse." data-en="If a button isn't used, it can be relocated.">Si un botón no se usa, puede reubicarse.</li>
+                        <li data-es="Si una tarjeta no se lee, puede rediseñarse." data-en="If a card isn't read, it can be redesigned.">Si una tarjeta no se lee, puede rediseñarse.</li>
+                        <li data-es="Si una sección genera más atención, puede priorizarse." data-en="If a section generates more attention, it can be prioritized.">Si una sección genera más atención, puede priorizarse.</li>
+                    </ul>
+                    <div class="info-card">
+                        <p data-es="Mismo sistema. Diferente resultado. Personalización sin perder coherencia." data-en="Same system. Different result. Personalization without losing coherence.">Mismo sistema. Diferente resultado. Personalización sin perder coherencia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p3-automation" class="section">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Automatización de experiencias" data-en="Experience Automation">Automatización de experiencias</h3>
+                <div class="content-block prose">
+                    <p data-es="Automatizar no significa deshumanizar. Significa liberar espacio para lo que realmente importa: las experiencias que conectan." data-en="Automating doesn't mean dehumanizing. It means freeing space for what really matters: experiences that connect.">Automatizar no significa deshumanizar. Significa liberar espacio para lo que realmente importa: las experiencias que conectan.</p>
+                    <p data-es="La automatización del engagement permite que cada interacción sea más precisa, oportuna y relevante. El sistema puede enviar una notificación justo cuando detecta señales de abandono, o modificar la interfaz para mostrar contenido más atractivo." data-en="Engagement automation allows each interaction to be more precise, timely and relevant. The system can send a notification just when it detects signs of abandonment, or modify the interface to show more attractive content.">La automatización del engagement permite que cada interacción sea más precisa, oportuna y relevante. El sistema puede enviar una notificación justo cuando detecta señales de abandono, o modificar la interfaz para mostrar contenido más atractivo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="p3-predictive" class="section section-light">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Personalización predictiva: la nueva expectativa" data-en="Predictive personalization: the new expectation">Personalización predictiva: la nueva expectativa</h3>
+                <div class="content-block prose">
+                    <p data-es="Ya no basta con adaptar una experiencia después de que el usuario actúe. Hoy, el estándar es anticiparse. Los productos pueden aprender del comportamiento, detectar patrones y predecir lo que el usuario necesita antes de que lo pida." data-en="It's no longer enough to adapt an experience after the user acts. Today, the standard is to anticipate. Products can learn from behavior, detect patterns and predict what the user needs before they ask.">Ya no basta con adaptar una experiencia después de que el usuario actúe. Hoy, el estándar es anticiparse. Los productos pueden aprender del comportamiento, detectar patrones y predecir lo que el usuario necesita antes de que lo pida.</p>
+                    <div class="principles-grid">
+                        <div class="principle-item">
+                            <span class="principle-number">1</span>
+                            <h4 data-es="Análisis contextual" data-en="Contextual analysis">Análisis contextual</h4>
+                            <p data-es="No solo saber qué hizo el usuario, sino cuándo, cómo y en qué estado." data-en="Not just knowing what the user did, but when, how and in what state.">No solo saber qué hizo el usuario, sino cuándo, cómo y en qué estado.</p>
+                        </div>
+                        <div class="principle-item">
+                            <span class="principle-number">2</span>
+                            <h4 data-es="Anticipación de necesidades" data-en="Anticipation of needs">Anticipación de necesidades</h4>
+                            <p data-es="Sugerir acciones útiles antes de que el usuario las solicite." data-en="Suggest useful actions before the user requests them.">Sugerir acciones útiles antes de que el usuario las solicite.</p>
+                        </div>
+                        <div class="principle-item">
+                            <span class="principle-number">3</span>
+                            <h4 data-es="Mejora continua" data-en="Continuous improvement">Mejora continua</h4>
+                            <p data-es="Cada interacción refina el modelo, haciendo el producto más relevante." data-en="Each interaction refines the model, making the product more relevant.">Cada interacción refina el modelo, haciendo el producto más relevant.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p3-evolution" class="section">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="IA, hábitos y evolución digital" data-en="AI, habits and digital evolution">IA, hábitos y evolución digital</h3>
+                <div class="content-block prose">
+                    <p data-es="Los hábitos digitales no son estáticos. Cambian, se adaptan y se refinan con cada interacción. La IA no solo observa esos cambios: los impulsa." data-en="Digital habits are not static. They change, adapt and refine with each interaction. AI doesn't just observe those changes: it drives them.">Los hábitos digitales no son estáticos. Cambian, se adaptan y se refinan con cada interacción. La IA no solo observa esos cambios: los impulsa.</p>
+                    <blockquote data-es="Cuando lo logramos, no solo creamos productos útiles. Creamos experiencias que se sienten vivas." data-en="When we achieve this, we don't just create useful products. We create experiences that feel alive.">Cuando lo logramos, no solo creamos productos útiles. Creamos experiencias que se sienten vivas.</blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- PART 4: THEORY TO ACTION -->
+        <section id="p4-cases" class="section section-part">
+            <div class="section-container">
+                <div class="part-header">
+                    <span class="part-label" data-es="Parte 4" data-en="Part 4">Parte 4</span>
+                    <h2 class="part-title" data-es="De la teoría a la acción" data-en="From Theory to Action">De la teoría a la acción</h2>
+                </div>
+                <div class="content-block">
+                    <h3 class="subsection-title" data-es="Casos reales: Hooked, Atomic Design e IA en acción" data-en="Real cases: Hooked, Atomic Design & AI in action">Casos reales: Hooked, Atomic Design e IA en acción</h3>
+                    <div class="cases-grid">
+                        <div class="case-card">
+                            <h4>Instagram</h4>
+                            <p data-es="Disparadores constantes, scroll infinito, recompensas variables, curación personalizada del feed." data-en="Constant triggers, infinite scroll, variable rewards, personalized feed curation.">Disparadores constantes, scroll infinito, recompensas variables, curación personalizada del feed.</p>
+                        </div>
+                        <div class="case-card">
+                            <h4>Duolingo</h4>
+                            <p data-es="Notificaciones de racha, ejercicios simples, recompensas visuales, adaptación de nivel por IA." data-en="Streak notifications, simple exercises, visual rewards, AI level adaptation.">Notificaciones de racha, ejercicios simples, recompensas visuales, adaptación de nivel por IA.</p>
+                        </div>
+                        <div class="case-card">
+                            <h4>Spotify</h4>
+                            <p data-es="Playlists personalizadas, escucha instantánea, algoritmos de recomendación, estructura modular." data-en="Personalized playlists, instant listening, recommendation algorithms, modular structure.">Playlists personalizadas, escucha instantánea, algoritmos de recomendación, estructura modular.</p>
+                        </div>
+                        <div class="case-card">
+                            <h4>TikTok</h4>
+                            <p data-es="Scroll infinito hiperpersonalizado, modelo de IA altamente preciso que aprende en tiempo real." data-en="Hyper-personalized infinite scroll, highly precise AI model that learns in real time.">Scroll infinito hiperpersonalizado, modelo de IA altamente preciso que aprende en tiempo real.</p>
+                        </div>
+                        <div class="case-card">
+                            <h4>Amazon</h4>
+                            <p data-es="Promociones personalizadas, recomendaciones predictivas, filtros y cards como componentes reutilizables." data-en="Personalized promotions, predictive recommendations, filters and cards as reusable components.">Promociones personalizadas, recomendaciones predictivas, filtros y cards como componentes reutilizables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p4-systems" class="section section-light">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Sistemas de diseño modulares en grandes empresas" data-en="Modular design systems in large companies">Sistemas de diseño modulares en grandes empresas</h3>
+                <div class="content-block">
+                    <div class="company-examples">
+                        <div class="company-card">
+                            <h4>Airbnb</h4>
+                            <p data-es="Design Language System — cada feature se construye con componentes validados, acelerando desarrollo y accesibilidad." data-en="Design Language System — every feature is built with validated components, accelerating development and accessibility.">Design Language System — cada feature se construye con componentes validados, acelerando desarrollo y accesibilidad.</p>
+                        </div>
+                        <div class="company-card">
+                            <h4>IBM Carbon</h4>
+                            <p data-es="Carbon Design System — coherencia a través de equipos distribuidos globalmente, cada módulo documentado." data-en="Carbon Design System — coherence across globally distributed teams, every module documented.">Carbon Design System — coherencia a través de equipos distribuidos globalmente, cada módulo documentado.</p>
+                        </div>
+                        <div class="company-card">
+                            <h4>Shopify Polaris</h4>
+                            <p data-es="Cientos de equipos trabajan sobre una base visual y funcional común, reduciendo bugs y acelerando lanzamientos." data-en="Hundreds of teams work on a common visual and functional base, reducing bugs and accelerating launches.">Cientos de equipos trabajan sobre una base visual y funcional común, reduciendo bugs y acelerando lanzamientos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p4-dynamic" class="section">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Interfaces dinámicas con IA" data-en="Dynamic interfaces with AI">Interfaces dinámicas con IA</h3>
+                <div class="content-block prose">
+                    <p data-es="Una interfaz dinámica adapta cada experiencia al contexto, preferencias y comportamiento de cada persona. Variables clave:" data-en="A dynamic interface adapts each experience to each person's context, preferences and behavior. Key variables:">Una interfaz dinámica adapta cada experiencia al contexto, preferencias y comportamiento de cada persona. Variables clave:</p>
+                    <div class="dynamic-vars">
+                        <span class="var-tag" data-es="Perfil de usuario" data-en="User profile">Perfil de usuario</span>
+                        <span class="var-tag" data-es="Momento de uso" data-en="Time of use">Momento de uso</span>
+                        <span class="var-tag" data-es="Comportamiento reciente" data-en="Recent behavior">Comportamiento reciente</span>
+                        <span class="var-tag" data-es="Objetivos del usuario" data-en="User goals">Objetivos del usuario</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p4-tools" class="section section-light">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Herramientas y frameworks recomendados" data-en="Recommended tools & frameworks">Herramientas y frameworks recomendados</h3>
+                <div class="tools-grid">
+                    <div class="tool-category">
+                        <h4 data-es="🎨 Diseño modular" data-en="🎨 Modular design">🎨 Diseño modular</h4>
+                        <ul>
+                            <li>Figma + Tokens Studio</li>
+                            <li>Storybook</li>
+                            <li>Zeroheight</li>
+                        </ul>
+                    </div>
+                    <div class="tool-category">
+                        <h4 data-es="🤖 IA y personalización" data-en="🤖 AI & personalization">🤖 IA y personalización</h4>
+                        <ul>
+                            <li>Segment / RudderStack</li>
+                            <li>Amplitude / Mixpanel</li>
+                            <li>Optimizely / VWO</li>
+                        </ul>
+                    </div>
+                    <div class="tool-category">
+                        <h4 data-es="⚙️ Automatización" data-en="⚙️ Automation">⚙️ Automatización</h4>
+                        <ul>
+                            <li>Zapier / Make / n8n</li>
+                            <li>Firebase Remote Config</li>
+                            <li>GrowthBook / LaunchDarkly</li>
+                        </ul>
+                    </div>
+                    <div class="tool-category">
+                        <h4 data-es="🧠 IA Generativa" data-en="🧠 Generative AI">🧠 IA Generativa</h4>
+                        <ul>
+                            <li>OpenAI / Claude / Gemini</li>
+                            <li>Pinecone / Weaviate / Qdrant</li>
+                            <li>LangChain / LlamaIndex</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p4-start" class="section">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Cómo empezar: pasos prácticos" data-en="How to start: practical steps">Cómo empezar: pasos prácticos</h3>
+                <div class="steps-timeline">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4 data-es="Define el hábito clave" data-en="Define the key habit">Define el hábito clave</h4>
+                            <p data-es="¿Qué comportamiento recurrente genera valor tanto para el usuario como para el producto?" data-en="What recurring behavior generates value for both the user and the product?">¿Qué comportamiento recurrente genera valor tanto para el usuario como para el producto?</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4 data-es="Audita tu diseño con ojos atómicos" data-en="Audit your design with atomic eyes">Audita tu diseño con ojos atómicos</h4>
+                            <p data-es="¿Tus componentes son reutilizables? Crea un inventario." data-en="Are your components reusable? Create an inventory.">¿Tus componentes son reutilizables? Crea un inventario.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4 data-es="Mapea los puntos de personalización" data-en="Map personalization points">Mapea los puntos de personalización</h4>
+                            <p data-es="¿Dónde puedes adaptar contenido según el contexto del usuario?" data-en="Where can you adapt content based on user context?">¿Dónde puedes adaptar contenido según el contexto del usuario?</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4 data-es="Conecta datos con decisiones" data-en="Connect data with decisions">Conecta datos con decisiones</h4>
+                            <p data-es="Define qué eventos deben recolectarse para ajustar la experiencia." data-en="Define what events should be collected to adjust the experience.">Define qué eventos deben recolectarse para ajustar la experiencia.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4 data-es="Empieza simple, mide y escala" data-en="Start simple, measure, and scale">Empieza simple, mide y escala</h4>
+                            <p data-es="Elige una experiencia específica, mide impacto y replica." data-en="Choose a specific experience, measure impact and replicate.">Elige una experiencia específica, mide impacto y replica.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4 data-es="Documenta y comparte" data-en="Document and share">Documenta y comparte</h4>
+                            <p data-es="Crea una cultura de diseño evolutivo, no estático." data-en="Create a culture of evolutionary design, not static.">Crea una cultura de diseño evolutivo, no estático.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p4-architecture" class="section section-light">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Arquitectura para equipos producto + IA" data-en="Architecture for product + AI teams">Arquitectura para equipos producto + IA</h3>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <h4 data-es="Equipo de Producto" data-en="Product Team">Equipo de Producto</h4>
+                        <p>Product Manager, UX Researcher, Data Analyst</p>
+                        <span class="team-focus" data-es="Definir comportamientos clave y medir éxito" data-en="Define key behaviors and measure success">Definir comportamientos clave y medir éxito</span>
+                    </div>
+                    <div class="team-card">
+                        <h4 data-es="Equipo de Diseño" data-en="Design Team">Equipo de Diseño</h4>
+                        <p>UX/UI Designer, Design System Lead, Frontend Dev</p>
+                        <span class="team-focus" data-es="Componentes reutilizables e interfaces dinámicas" data-en="Reusable components and dynamic interfaces">Componentes reutilizables e interfaces dinámicas</span>
+                    </div>
+                    <div class="team-card">
+                        <h4 data-es="Equipo de IA" data-en="AI Team">Equipo de IA</h4>
+                        <p>Data Scientist, ML Engineer, IA Product Owner</p>
+                        <span class="team-focus" data-es="Modelos de personalización y reglas inteligentes" data-en="Personalization models and intelligent rules">Modelos de personalización y reglas inteligentes</span>
+                    </div>
+                    <div class="team-card">
+                        <h4 data-es="Equipo de Orquestación" data-en="Orchestration Team">Equipo de Orquestación</h4>
+                        <p>Tech Lead, Backend Engineer, DevOps</p>
+                        <span class="team-focus" data-es="Integrar sistemas y asegurar escalabilidad" data-en="Integrate systems and ensure scalability">Integrar sistemas y asegurar escalabilidad</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p4-data" class="section">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Modelos de datos para personalización" data-en="Data models for personalization">Modelos de datos para personalización</h3>
+                <div class="content-block">
+                    <div class="data-table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th data-es="Tipo de dato" data-en="Data type">Tipo de dato</th>
+                                    <th data-es="Ejemplos" data-en="Examples">Ejemplos</th>
+                                    <th data-es="Usos" data-en="Uses">Usos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-es="Demográficos" data-en="Demographic">Demográficos</td>
+                                    <td data-es="Edad, género, ubicación" data-en="Age, gender, location">Edad, género, ubicación</td>
+                                    <td data-es="Adaptar tono, idioma, visuales" data-en="Adapt tone, language, visuals">Adaptar tono, idioma, visuales</td>
+                                </tr>
+                                <tr>
+                                    <td data-es="Contextuales" data-en="Contextual">Contextuales</td>
+                                    <td data-es="Hora, clima, dispositivo" data-en="Time, weather, device">Hora, clima, dispositivo</td>
+                                    <td data-es="Ajustar contenido en tiempo real" data-en="Adjust content in real time">Ajustar contenido en tiempo real</td>
+                                </tr>
+                                <tr>
+                                    <td data-es="Conductuales" data-en="Behavioral">Conductuales</td>
+                                    <td data-es="Clics, búsquedas, tiempo" data-en="Clicks, searches, time">Clics, búsquedas, tiempo</td>
+                                    <td data-es="Detectar patrones de uso" data-en="Detect usage patterns">Detectar patrones de uso</td>
+                                </tr>
+                                <tr>
+                                    <td data-es="Declarativos" data-en="Declarative">Declarativos</td>
+                                    <td data-es="Preferencias, intereses" data-en="Preferences, interests">Preferencias, intereses</td>
+                                    <td data-es="Afinar recomendaciones" data-en="Refine recommendations">Afinar recomendaciones</td>
+                                </tr>
+                                <tr>
+                                    <td data-es="Predictivos (IA)" data-en="Predictive (AI)">Predictivos (IA)</td>
+                                    <td data-es="Segmentos, propensión" data-en="Segments, propensity">Segmentos, propensión</td>
+                                    <td data-es="Activar en el momento justo" data-en="Activate at the right time">Activar en el momento justo</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="p4-campaign" class="section section-light">
+            <div class="section-container">
+                <h3 class="subsection-title" data-es="Caso práctico: De la teoría a una campaña real" data-en="Case study: From theory to a real campaign">Caso práctico: De la teoría a una campaña real</h3>
+                <div class="content-block prose">
+                    <p data-es="En este capítulo construimos una campaña completa utilizando los cuatro momentos del Hook: Trigger, Action, Variable Reward e Investment. El objetivo es crear una biblioteca de componentes reutilizables que permita generar múltiples variaciones." data-en="In this chapter we build a complete campaign using the four moments of the Hook: Trigger, Action, Variable Reward and Investment. The goal is to create a library of reusable components that allows generating multiple variations.">En este capítulo construimos una campaña completa utilizando los cuatro momentos del Hook: Trigger, Action, Variable Reward e Investment. El objetivo es crear una biblioteca de componentes reutilizables que permita generar múltiples variaciones.</p>
+                    <div class="campaign-flow">
+                        <div class="flow-step">
+                            <span class="flow-icon">⚡</span>
+                            <span data-es="Trigger" data-en="Trigger">Trigger</span>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <span class="flow-icon">👆</span>
+                            <span data-es="Acción" data-en="Action">Acción</span>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <span class="flow-icon">🎁</span>
+                            <span data-es="Recompensa" data-en="Reward">Recompensa</span>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <span class="flow-icon">💎</span>
+                            <span data-es="Inversión" data-en="Investment">Inversión</span>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <span class="flow-icon">🤖</span>
+                            <span data-es="Personalización IA" data-en="AI Personalization">Personalización IA</span>
+                        </div>
+                        <div class="flow-arrow flow-loop">↻</div>
+                    </div>
+                    <p data-es="Este último elemento — la personalización impulsada por IA — es el aporte central de este método. Los datos generados en la inversión alimentan modelos inteligentes que ajustan la experiencia y reinician el ciclo con mayor relevancia." data-en="This last element — AI-driven personalization — is the central contribution of this method. The data generated in the investment feeds intelligent models that adjust the experience and restart the cycle with greater relevance.">Este último elemento — la personalización impulsada por IA — es el aporte central de este método. Los datos generados en la inversión alimentan modelos inteligentes que ajustan la experiencia y reinician el ciclo con mayor relevancia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONCLUSION -->
+        <section id="conclusion" class="section section-conclusion">
+            <div class="section-container">
+                <h2 class="section-title" data-es="Conclusión" data-en="Conclusion">Conclusión</h2>
+                <div class="conclusion-content">
+                    <div class="conclusion-block">
+                        <h3 data-es="El diseño como sistema vivo" data-en="Design as a living system">El diseño como sistema vivo</h3>
+                        <p data-es="Lo que has visto en este libro no es una receta cerrada, ni un modelo definitivo. Es una forma de entender cómo diseñar experiencias en un mundo donde las interfaces ya no son estáticas, sino sistemas que aprenden, se adaptan y evolucionan." data-en="What you've seen in this book is not a closed recipe, nor a definitive model. It's a way of understanding how to design experiences in a world where interfaces are no longer static, but systems that learn, adapt and evolve.">Lo que has visto en este libro no es una receta cerrada, ni un modelo definitivo. Es una forma de entender cómo diseñar experiencias en un mundo donde las interfaces ya no son estáticas, sino sistemas que aprenden, se adaptan y evolucionan.</p>
+                    </div>
+                    <div class="conclusion-pillars">
+                        <div class="pillar">
+                            <span>Hooked</span>
+                            <p data-es="Define el comportamiento" data-en="Defines behavior">Define el comportamiento</p>
+                        </div>
+                        <div class="pillar-connector">+</div>
+                        <div class="pillar">
+                            <span>Atomic Design</span>
+                            <p data-es="Define la ejecución" data-en="Defines execution">Define la ejecución</p>
+                        </div>
+                        <div class="pillar-connector">+</div>
+                        <div class="pillar">
+                            <span>IA</span>
+                            <p data-es="Define la inteligencia" data-en="Defines intelligence">Define la inteligencia</p>
+                        </div>
+                    </div>
+                    <blockquote class="final-quote" data-es="El futuro del diseño no está en crear pantallas, sino en construir sistemas capaces de entender a las personas y responder a ellas de manera inteligente." data-en="The future of design is not in creating screens, but in building systems capable of understanding people and responding to them intelligently.">El futuro del diseño no está en crear pantallas, sino en construir sistemas capaces de entender a las personas y responder a ellas de manera inteligente.</blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- CREDITS -->
+        <section id="credits" class="section">
+            <div class="section-container">
+                <h2 class="section-title" data-es="Créditos" data-en="Credits">Créditos</h2>
+                <div class="credits-grid">
+                    <div class="credit-category">
+                        <h4 data-es="Modelos de comportamiento" data-en="Behavior Models">Modelos de comportamiento</h4>
+                        <ul>
+                            <li>Nir Eyal — <em>Hooked</em> (2014)</li>
+                            <li>BJ Fogg — <em>Tiny Habits</em> (2019)</li>
+                            <li>James Clear — <em>Atomic Habits</em> (2018)</li>
+                        </ul>
+                    </div>
+                    <div class="credit-category">
+                        <h4 data-es="Diseño de sistemas" data-en="Design Systems">Diseño de sistemas</h4>
+                        <ul>
+                            <li>Brad Frost — <em>Atomic Design</em> (2016)</li>
+                            <li>Alla Kholmatova — <em>Design Systems</em> (2017)</li>
+                            <li>Nathan Curtis — EightShapes</li>
+                        </ul>
+                    </div>
+                    <div class="credit-category">
+                        <h4 data-es="IA y personalización" data-en="AI & Personalization">IA y personalización</h4>
+                        <ul>
+                            <li>Ethan Mollick — <em>Co-Intelligence</em> (2024)</li>
+                            <li>OpenAI, Pinecone, Segment, LangChain</li>
+                        </ul>
+                    </div>
+                    <div class="credit-category">
+                        <h4 data-es="Producto y UX" data-en="Product & UX">Producto y UX</h4>
+                        <ul>
+                            <li>Julie Zhuo — <em>The Making of a Manager</em></li>
+                            <li>Leah Buley — <em>UX Team of One</em></li>
+                            <li>Reforge — Growth Programs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© 2026 Charly Meza. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+                    <p data-es="Primera edición: 2026 | Publicado independientemente" data-en="First edition: 2026 | Independently published">Primera edición: 2026 | Publicado independientemente</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <span class="material-icons">keyboard_arrow_up</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
